@@ -8,13 +8,12 @@ class Child extends Component {
     this.onChangeHandle = this.onChangeHandle.bind(this);
     this.onChangePwdHandle = this.onChangePwdHandle.bind(this);
     this.onsubmittedHandle = this.onsubmittedHandle.bind(this);
-    this.state = {
-      fireRedirect: false
-    }
+    
   }
   onChangeHandle(e) {
-
+    e.preventDefault
       this.props.onUpdateUserName(e.target.value)
+
   }
   onChangePwdHandle(e) {
     this.props.onUpdatePassWord(e.target.value)
@@ -22,7 +21,7 @@ class Child extends Component {
 
   onsubmittedHandle(e) {
     e.preventDefault()
-    this.context.router.replace('/login');
+
   }
   render () {
     return (
