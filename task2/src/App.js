@@ -6,16 +6,11 @@ import './App.css';
 import Child from './Child'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-        test: 'hello'
-    }
-    this.changeHandle = this.changeHandle.bind(this)
+  state = {
+    test: 'hello'
   }
 
-  changeHandle(e){
+  changeHandle = e => {
     e.preventDefault();
     this.setState({
       test: e.target.value
