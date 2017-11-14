@@ -1,5 +1,9 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+# ignore package lock.json even we should not
+
+package-lock.json
+
 # dependencies
 /node_modules
 
