@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {selectProduct} from "../actions/index";
+import {selectProduct} from "../redux/actions";
 import { bindActionCreators } from "redux";
 
 class ProductList extends Component {
-
-
     renderList() {
         return this.props.products.map((product) => {
             return (
