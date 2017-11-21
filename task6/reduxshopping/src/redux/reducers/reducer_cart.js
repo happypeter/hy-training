@@ -1,7 +1,17 @@
-export default function (state = null, action) {
+const initState = [
+  // {
+  //   productName: 'xxx',
+  //   price: 'xxx'
+  // }
+]
+
+export default function (state = [], action) {
     switch (action.type) {
         case "PRODUCT_SELECTED":
-            return action.payload;
+            return [
+              ...state,
+              action.product
+            ]
     }
     return state;
 }
