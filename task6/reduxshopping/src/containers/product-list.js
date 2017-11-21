@@ -9,9 +9,8 @@ class ProductList extends Component {
       const { products } = this.props
       const productList = products.map((product) => {
           return (
-              <li className="list-group-item" key={product.title} onClick={()=>this.props.selectProduct(product)}>
-                  {product.title}  |  {product.price}
-
+              <li className="list-group-item" key={product.productName} onClick={()=>this.props.selectProduct(product)}>
+                  {product.productName}  |  {product.price}
               </li>
           )
       })
