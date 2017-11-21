@@ -3,14 +3,13 @@ import { connect } from 'react-redux';
 
 class Cart extends Component {
     render() {
-       if (!this.props.product) {
-           return <div>Empty</div>
-       }
+      const { cart } = this.props
+      const productList = cart.map(p => {
+        return <li key={p.productName}>{p.productName}</li>
+      })
        return (
            <div>
-               <div>Title:{this.props.product.title}</div>
-               <div>Price:{this.props.product.price}</div>
-
+              { productList }
            </div>
        )
     }
@@ -20,7 +19,7 @@ class Cart extends Component {
 
 function mapStateToProps(state) {
     return {
-        product: state.activeProduct
+        cart: state.cart
     }
 }
 

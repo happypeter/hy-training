@@ -8,6 +8,7 @@ const initState = [
 export default function (state = [], action) {
     switch (action.type) {
         case "PRODUCT_SELECTED":
+           console.log('reducer here.....')
             return [
               ...state,
               action.product

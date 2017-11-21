@@ -5,11 +5,16 @@ import { bindActionCreators } from "redux";
 
 class ProductList extends Component {
 
+    handleClick = (product) => {
+      console.log('clicked')
+      this.props.dispatch(selectProduct(product))
+    }
+
     render() {
       const { products } = this.props
       const productList = products.map((product) => {
           return (
-              <li className="list-group-item" key={product.productName} onClick={()=>this.props.selectProduct(product)}>
+              <li className="list-group-item" key={product.productName} onClick={()=>this.handleClick(product)} >
                   {product.productName}  |  {product.price}
               </li>
           )
@@ -26,6 +31,4 @@ const mapStateToProps = state => ({
   products: state.products
 })
 
-export default connect(mapStateToProps,{
-  selectProduct
-})(ProductList)
+export default connect(mapStateToProps)(ProductList)
