@@ -4,31 +4,28 @@ import {selectProduct} from "../redux/actions";
 import { bindActionCreators } from "redux";
 
 class ProductList extends Component {
-    renderList() {
-        return this.props.products.map((product) => {
-            return (
-                <li className="list-group-item" key={product.title} onClick={()=>this.props.selectProduct(product)}>
-                    {product.title}  |  {product.price}
-
-                </li>
-            )
-        })
-    }
 
     render() {
+      const { products } = this.props
+      const productList = products.map((product) => {
+          return (
+              <li className="list-group-item" key={product.title} onClick={()=>this.props.selectProduct(product)}>
+                  {product.title}  |  {product.price}
+
+              </li>
+          )
+      })
         return(
             <ul className="list-group col-sm-4">
-                {this.renderList()}
+                {productList}
             </ul>
         )
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        products: state.products
-    };
-}
+const mapStateToProps = state => ({
+  products: state.products
+})
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({selectProduct: selectProduct},dispatch)
