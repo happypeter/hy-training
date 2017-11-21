@@ -27,8 +27,6 @@ const mapStateToProps = state => ({
   products: state.products
 })
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({selectProduct: selectProduct},dispatch)
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(ProductList)
+export default connect(mapStateToProps,{
+  selectProduct
+})(ProductList)
