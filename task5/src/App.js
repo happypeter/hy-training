@@ -7,25 +7,27 @@ import Cart from './Cart';
 
 
 class App extends Component {
-constructor(props) {
-  super(props);
+// constructor(props) {
+//   super(props);
 
-    this.state = {
-      products: [{name:'test1',price:'123'},{name:'test2',price:'124'}],
-      item:' ',
-      price:' ',
-      cnt: 0
-    }
-
-this.onUpdateTest = this.onUpdateTest.bind(this)
+    state = {
+        products: [{name:'test1',price:'123'},{name:'test2',price:'124'}],
+        item:' ',
+        price:' ',
+        cnt: 0
+      }
 
 
-}
+
+
+//}
 onUpdateTest(item,price){
+  console.log("hhhh")
   this.setState({
     item,
     price
   })
+
 }
 onCount(cnt) {
   this.setState({
