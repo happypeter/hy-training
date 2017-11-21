@@ -5,4 +5,4 @@ import ActiveProduct from './reducer_cart'
 export default combineReducers({
     products: ProductsReducer,
     activeProduct: ActiveProduct
-});
+})
