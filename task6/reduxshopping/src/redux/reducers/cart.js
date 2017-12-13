@@ -1,9 +1,4 @@
-const initState = [
-  // {
-  //   productName: 'xxx',
-  //   price: 'xxx'
-  // }
-]
+
 
 export default function (state = [], action) {
     switch (action.type) {
