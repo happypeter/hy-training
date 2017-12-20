@@ -5,8 +5,7 @@ import { addToCart } from './actions/cartActions'
 class App extends Component {
 
   handleClick = () => {
-    console.log('handleClick')
-    this.props.dispatch(addToCart())
+    this.props.addToCart()
   }
 
   render() {
@@ -25,4 +24,6 @@ const mapStateToProps = state => ({
   all: state.cart.all
 })
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, {
+  addToCart
+})(App)
