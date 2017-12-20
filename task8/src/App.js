@@ -6,7 +6,7 @@ class App extends Component {
 
   handleClick = () => {
     console.log('handleClick')
-    console.log(addToCart())
+    this.props.dispatch(addToCart())
   }
 
   render() {
