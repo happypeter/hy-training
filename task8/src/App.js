@@ -4,16 +4,19 @@ import { addToCart } from './actions/cartActions'
 
 class App extends Component {
 
-  handleClick = () => {
-    this.props.addToCart()
+  handleClick = id => {
+    this.props.addToCart(id)
   }
 
   render() {
     return (
       <div>
         App: { this.props.all }
-        <button onClick={this.handleClick}>
-          Add
+        <button onClick={() => this.handleClick(1)}>
+          1
+        </button>
+        <button onClick={() => this.handleClick(2)}>
+          2
         </button>
       </div>
     );

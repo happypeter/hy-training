@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 
-const all = (state = 0 , action) => {
+const all = (state = 'TODO' , action) => {
   switch (action.type) {
     case 'ADD_TO_CART':
-      return state + 1;
+      return action.title;
     default:
       return state
   }

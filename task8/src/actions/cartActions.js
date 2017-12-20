@@ -1,5 +1,13 @@
-export const addToCart = () => {
+import axios from 'axios'
+
+export const addToCart = id => {
+
   return dispatch => {
-    dispatch({ type: 'ADD_TO_CART' })
+    axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`).then(
+      res => {
+        const title = res.data.title
+        dispatch({ type: 'ADD_TO_CART', title })
+      }
+    )
   }
 }
