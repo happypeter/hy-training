@@ -3,11 +3,12 @@ import styled from 'styled-components'
 
 class Cart extends Component {
   render () {
-    const { all } = this.props
-    const list = all.map( t => {
+    const { cartProducts } = this.props
+    console.log('cartProducts', cartProducts);
+    const list = cartProducts.map( t => {
       return (
         <div key={t} >
-          { t }
+          { t.productName }
         </div>
       )
     })

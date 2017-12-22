@@ -1,11 +1,19 @@
 import { createSelector } from 'reselect'
-import { getUsersById } from './userSelectors'
 
 const getProducts = state => state.product.all
+
+const getProductsById = createSelector(
+  getProducts,
+  products => products.reduce((obj, product) => {
+    obj[product.id] = product
+    return obj
+  }, {})
+)
+
 const getCartIds = state => state.cart.all
 
 export const getCartProducts = createSelector(
-  getProducts,
+  getProductsById,
   getCartIds,
-  (products, ids) => products.filter(t => t.id === id)
+  (products, ids) => ids.map(id => products[id])
 )
